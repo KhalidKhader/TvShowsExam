@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Registration</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/newShow.css' %}">
+
+</head>
+<body>
+    <a href="/shows">Tv Shows</a>
+    <a href="/logout">Log Out</a>
+    <div class="container">        
+        <form action="shows" method="post">
+            {%csrf_token%}
+            <h2>Add a new Show</h2>
+            <table>
+                <tr>                    
+                    <td><label>Title:</label></td>
+                    <td><input type="text" name="title"></td>
+                </tr>
+                <tr>                   
+                    <td><label>Network:</label></td>
+                    <td><input type="text" name="network"></td>
+                </tr>
+                <tr>                    
+                    <td><label>Relase Date:</label></td>
+                    <td><input type="date" name="date"></td>
+                </tr>
+                <tr>                    
+                    <td><label>Description:</label></td>
+                    <td><textarea class="area" name="desc"> </textarea></td>
+                </tr>
+                                                                                                    
+            </table>
+            <button>Add</button>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </form>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Registration</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/tvShowDetail.css' %}">
+
+</head>
+<body>
+    <a href="/shows">Tv Shows</a>
+    <a href="/logout">Log Out</a>
+    <div class="container">        
+                <h1>{{data.title}}</h1>
+                <h3>Network: {{data.network}}</h3>
+                <h3>Relase Date: {{data.date}}</h3>
+                <h3>Description:</h3>
+                <h4> {{data.desc}} </h4>
+                <h4>Posted By: {{data.like.first_name}} {{data.like.last_name}}</h4>                                                                                     
+    </div>
+    
+</body>
+</html>

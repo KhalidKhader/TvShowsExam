@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tv Shows</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/allTvshows.css' %}">
+
+</head>
+
+<body>
+    <h1>{{request.session.first_name}}</h1>
+<div class="links">
+    <a href="/shows/new">+ Create</a>
+    <a href="/logout">LogOut</a>
+</div>
+<h3>All TV Shows</h3>
+
+    <div class="main">
+
+        Liked By: {{count}}
+        <table >
+            <tr>
+                <td>
+                    Title
+                </td>
+                <td>
+                    Network
+                </td>
+                <td>
+                    Relase Date
+                </td>
+                <td>
+                    description
+                </td>
+                <td>
+                    Actions
+                </td>
+                <td>
+                    Like!
+                </td>
+            </tr>
+            {% for data in datas %}
+            <tr>
+                <td>
+                    {{data.title}}
+                </td>
+                <td>
+                    {{data.network}}
+                </td>
+                <td>
+                    {{data.date}}
+                </td>
+                <td>
+                    {{data.desc}}
+                </td>
+                <td>
+                    <a href="/show/{{data.id}}">show</a>
+                    {% if data.like.id is request.session.userid %}
+                    <a href="/update/{{data.id}}">edit</a>
+                    <a href="/delete/{{data.id}}">delete</a>
+                    {% endif %}
+                </td>
+                <td>
+                    {% if   data.likeFlag %}
+                    <form action="like/{{data.id}}" method="post">
+                        {%csrf_token%}
+                        <button>like</button>
+                    </form>  
+                    {% endif %} 
+                    {%  if   not data.likeFlag %}
+                    <form action="unlike/{{data.id}}" method="post">
+                        {%csrf_token%}
+                        <button>unlike</button>
+                    </form>  
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+ 
+</body>
+
+</html>

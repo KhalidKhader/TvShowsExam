@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+.area{
+    border: 0.2rem solid;
+    resize: none;
+    width: 100%;
+    height: 100px;
+    margin-left: 40px;
+}
+h2{
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+button{
+    box-shadow: 0.2rem 0.2rem;
+    background-color: white;
+    margin-left: 16rem;
+    margin-top: 1rem;
+    width: 30%;
+    height: 2rem;
+}
+input{
+    border: 0.2rem solid;
+    width: 100%;
+    height: 2rem;
+    margin-bottom: 0.5rem;
+    margin-left: 40px;
+}
+input[type=date]{
+    width: 60%;
+}
+label{
+    margin-bottom: 0.5rem;
+    font-weight: bolder;
+
+}
+a{
+    float: right;
+    margin: 10px;
+}

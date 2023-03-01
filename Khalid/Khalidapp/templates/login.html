@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Registration</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+</head>
+<body>
+
+    <div class="container">        
+        <form action="register" method="post">
+            {%csrf_token%}
+            <h2>Registration</h2>
+            <table>
+                <tr>                    
+                    <td><label>First Name:</label></td>
+                    <td><input type="text" name="first_name"></td>
+                </tr>
+                <tr>                   
+                    <td><label>last Name:</label></td>
+                    <td><input type="text" name="last_name"></td>
+                </tr>
+                <tr>                    
+                    <td><label>Email:</label></td>
+                    <td><input type="text" name="email"></td>
+                </tr>
+                <tr>                    
+                    <td><label>Password:</label></td>
+                    <td><input type="password" name="password"></td>
+                </tr>
+                <tr>                    
+                    <td><label>Confirm PW:</label></td>
+                    <td><input type="password" name="confirm"></td>
+                </tr>                                                                                                
+            </table>
+            <button>Register</button>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </form>
+        
+        <form action="login" method="post">
+            {%csrf_token%}
+            <h2>Login</h2>
+            <table>
+                <tr>                    
+                    <td><label>Email:</label></td>
+                    <td><input type="text" name="email1"></td>
+                </tr>
+                <tr>                    
+                    <td><label>Password:</label></td>
+                    <td><input type="password" name="password1"></td>
+                </tr>
+            </table>
+            <button>Log In</button>
+        </form>
+    </div>
+
+</body>
+</html>

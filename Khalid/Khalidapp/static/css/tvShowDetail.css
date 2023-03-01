@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    border: 0.2rem solid;
+    justify-content: space-evenly;
+    margin-left: 20%;
+    margin-right: 30%;
+    margin-top: 10%;
+    padding: 30px;
+}
+h1,h2,h3,h4{
+    margin-top: 10px;
+    color: blueviolet;
+}
+a{
+    float: right;
+    margin: 10px;
+}

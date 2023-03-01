@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+h2{
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+button{
+    box-shadow: 0.2rem 0.2rem;
+    background-color: white;
+    margin-left: 4rem;
+    margin-top: 1rem;
+    width: 23%;
+}
+input{
+    border: 0.1rem solid;
+    width: 40%;
+    height: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+label{
+    margin-bottom: 0.5rem;
+
+}
